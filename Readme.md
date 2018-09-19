@@ -24,11 +24,11 @@
 
 ##### 配置说明：
 
-目前取数据是从http://139.199.32.80:3000的/getResult服务中获取，传递参数serviceRequestID。如需更改取数据节点，只需在REDIS\src\main\java\redisWeb\provinceDataServlet.java中更改以下代码。
+	目前取数据是从http://139.199.32.80:3000的/getResult服务中获取，传递参数serviceRequestID。如需更改取数据节点，只需在REDIS\src\main\java\redisWeb\provinceDataServlet.java中更改以下代码。
 
 ```
 HttpUtil httpUtil=new HttpUtil();
 temp=httpUtil.doGet("http://139.199.32.80:3000/getResult?serviceRequestID=59");
 ```
 
-将其中的url更换即可。
+	将其中的url更换即可。
