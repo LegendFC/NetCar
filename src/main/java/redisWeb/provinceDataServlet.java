@@ -147,7 +147,7 @@ public class provinceDataServlet extends HttpServlet {
 //			int index=0;
 //			for(;index<listLength;index++)
 //			{
-//				if(district.equals(provinceCode[index]))
+//				if(district.equals(provinceCode[index]))1+
 //				{
 //					break;
 //				}
@@ -174,7 +174,8 @@ public class provinceDataServlet extends HttpServlet {
 		//newly added
 		String temp,jsonString;
 		HttpUtil httpUtil=new HttpUtil();
-		temp=httpUtil.doGet("http://139.199.32.80:3000/getResult?serviceRequestID=59");
+//		temp=httpUtil.doGet("http://139.199.32.80:3000/getResult?serviceRequestID=59");
+		temp=httpUtil.doGet("http://192.168.3.16:3000/getResult?serviceRequestID=57");
 
 //
 //		a="[\r\n {\r\n\"time\": \"2018-09-15T06:50:22.000Z\",\r\n\"result\": \"[{\\\"key\\\":\\\"10-order-all-110111-*\\\",\\\"orderId\\\":[\\\"000003\\\"]},{\\\"key\\\":\\\"10-order-all-110115-*\\\",\\\"orderId\\\":[\\\"000003\\\"]}]\"\r\n },\r\n{\r\n\"time\": \"2018-09-15T06:50:23.000Z\",\r\n\"result\": \"[{\\\"key\\\":\\\"10-order-all-110111-*\\\",\\\"orderId\\\":[\\\"000003\\\"]},{\\\"key\\\":\\\"10-order-all-110115-*\\\",\\\"orderId\\\":[\\\"000003\\\"]}]\"\r\n },\r\n {\r\n\"time\": \"2018-09-15T06:50:24.000Z\",\r\n\"result\": \"[{\\\"key\\\":\\\"10-order-all-110111-*\\\",\\\"orderId\\\":[\\\"000003\\\"]},{\\\"key\\\":\\\"10-order-all-110115-*\\\",\\\"orderId\\\":[\\\"000003\\\"]}]\"\r\n },\r\n {\r\n\"time\": \"2018-09-15T06:50:25.000Z\",\r\n\"result\": \"[{\\\"key\\\":\\\"10-order-all-110111-*\\\",\\\"orderId\\\":[\\\"000003\\\"]},{\\\"key\\\":\\\"10-order-all-110115-*\\\",\\\"orderId\\\":[\\\"000003\\\"]}]\"\r\n },\r\n {\r\n\"time\": \"2018-09-15T06:50:26.000Z\",\r\n\"result\": \"[{\\\"key\\\":\\\"10-order-all-110111-*\\\",\\\"orderId\\\":[\\\"000003\\\"]},{\\\"key\\\":\\\"10-order-all-110115-*\\\",\\\"orderId\\\":[\\\"000003\\\"]}]\"\r\n },\r\n {\r\n\"time\": \"2018-09-15T06:50:27.000Z\",\r\n\"result\": \"[{\\\"key\\\":\\\"10-order-all-110111-*\\\",\\\"orderId\\\":[\\\"000003\\\"]},{\\\"key\\\":\\\"10-order-all-110115-*\\\",\\\"orderId\\\":[\\\"000003\\\"]}]\"\r\n },\r\n {\r\n\"time\": \"2018-09-15T06:50:28.000Z\",\r\n\"result\": \"[{\\\"key\\\":\\\"10-order-all-110111-*\\\",\\\"orderId\\\":[\\\"000003\\\"]},{\\\"key\\\":\\\"10-order-all-110115-*\\\",\\\"orderId\\\":[\\\"000003\\\"]}]\"\r\n },\r\n {\r\n\"time\": \"2018-09-15T06:50:29.000Z\",\r\n\"result\": \"[{\\\"key\\\":\\\"10-order-all-110111-*\\\",\\\"orderId\\\":[\\\"000003\\\"]},{\\\"key\\\":\\\"10-order-all-110115-*\\\",\\\"orderId\\\":[\\\"000003\\\"]}]\"\r\n }\r\n]\r\n";
@@ -194,9 +195,10 @@ public class provinceDataServlet extends HttpServlet {
 		Key_Order[] key_orders=gson.fromJson(temp_bean.result,Key_Order[].class);
 
 		for (Key_Order k:key_orders) {
-			char c1=k.key.charAt(17);
-			char c2=k.key.charAt(18);
-			int i=Integer.valueOf(k.orderId[0]);
+			char c1=k.key.charAt(16);
+			char c2=k.key.charAt(17);
+//			int i=Integer.valueOf(k.orderId[0]);
+			int i=k.orderId.length;
 			switch (c1){
 				case '0':
 					switch(c2){
