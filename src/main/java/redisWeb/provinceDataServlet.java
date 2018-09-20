@@ -177,11 +177,8 @@ public class provinceDataServlet extends HttpServlet {
 //		temp=httpUtil.doGet("http://139.199.32.80:3000/getResult?serviceRequestID=59");
 		temp=httpUtil.doGet("http://192.168.3.16:3000/getResult?serviceRequestID=57");
 
-//
-//		a="[\r\n {\r\n\"time\": \"2018-09-15T06:50:22.000Z\",\r\n\"result\": \"[{\\\"key\\\":\\\"10-order-all-110111-*\\\",\\\"orderId\\\":[\\\"000003\\\"]},{\\\"key\\\":\\\"10-order-all-110115-*\\\",\\\"orderId\\\":[\\\"000003\\\"]}]\"\r\n },\r\n{\r\n\"time\": \"2018-09-15T06:50:23.000Z\",\r\n\"result\": \"[{\\\"key\\\":\\\"10-order-all-110111-*\\\",\\\"orderId\\\":[\\\"000003\\\"]},{\\\"key\\\":\\\"10-order-all-110115-*\\\",\\\"orderId\\\":[\\\"000003\\\"]}]\"\r\n },\r\n {\r\n\"time\": \"2018-09-15T06:50:24.000Z\",\r\n\"result\": \"[{\\\"key\\\":\\\"10-order-all-110111-*\\\",\\\"orderId\\\":[\\\"000003\\\"]},{\\\"key\\\":\\\"10-order-all-110115-*\\\",\\\"orderId\\\":[\\\"000003\\\"]}]\"\r\n },\r\n {\r\n\"time\": \"2018-09-15T06:50:25.000Z\",\r\n\"result\": \"[{\\\"key\\\":\\\"10-order-all-110111-*\\\",\\\"orderId\\\":[\\\"000003\\\"]},{\\\"key\\\":\\\"10-order-all-110115-*\\\",\\\"orderId\\\":[\\\"000003\\\"]}]\"\r\n },\r\n {\r\n\"time\": \"2018-09-15T06:50:26.000Z\",\r\n\"result\": \"[{\\\"key\\\":\\\"10-order-all-110111-*\\\",\\\"orderId\\\":[\\\"000003\\\"]},{\\\"key\\\":\\\"10-order-all-110115-*\\\",\\\"orderId\\\":[\\\"000003\\\"]}]\"\r\n },\r\n {\r\n\"time\": \"2018-09-15T06:50:27.000Z\",\r\n\"result\": \"[{\\\"key\\\":\\\"10-order-all-110111-*\\\",\\\"orderId\\\":[\\\"000003\\\"]},{\\\"key\\\":\\\"10-order-all-110115-*\\\",\\\"orderId\\\":[\\\"000003\\\"]}]\"\r\n },\r\n {\r\n\"time\": \"2018-09-15T06:50:28.000Z\",\r\n\"result\": \"[{\\\"key\\\":\\\"10-order-all-110111-*\\\",\\\"orderId\\\":[\\\"000003\\\"]},{\\\"key\\\":\\\"10-order-all-110115-*\\\",\\\"orderId\\\":[\\\"000003\\\"]}]\"\r\n },\r\n {\r\n\"time\": \"2018-09-15T06:50:29.000Z\",\r\n\"result\": \"[{\\\"key\\\":\\\"10-order-all-110111-*\\\",\\\"orderId\\\":[\\\"000003\\\"]},{\\\"key\\\":\\\"10-order-all-110115-*\\\",\\\"orderId\\\":[\\\"000003\\\"]}]\"\r\n }\r\n]\r\n";
-//
+
 		jsonString=resolveJson(temp);
-		String s="[{\"name\":\"房山区\",\"value\":3},{\"name\":\"大兴区\",\"value\":3}]";
 		pw.write(jsonString);
 		//add end
 
