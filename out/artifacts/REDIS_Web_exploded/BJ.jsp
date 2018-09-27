@@ -301,6 +301,8 @@ setInterval("refresh()",1000);
     //newly add
 function refresh() {
     $.getJSON(url).done(function (data) {
+        // data_1=[{"name":"东城区", "value":10},{"name":"西城区", "value":20},{"name":"朝阳区", "value":24},{"name":"丰台区", "value":34},{"name":"石景山区", "value":78},{"name":"海淀区", "value":136},{"name":"门头沟区", "value":58},{"name":"房山区", "value":59},{"name":"通州区", "value":99},{"name":"顺义区", "value":278},{"name":"昌平区", "value":90},{"name":"大兴区", "value":110},{"name":"怀柔区", "value":120},{"name":"平谷区", "value":73},{"name":"密云区", "value":27},{"name":"延庆区", "value":7}];
+
         myChart.setOption({
             series: [
                 {

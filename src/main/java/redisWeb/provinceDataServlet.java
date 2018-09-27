@@ -114,7 +114,7 @@ public class provinceDataServlet extends HttpServlet {
 //		String com[] = company.split(",");
 //		String status=request.getParameter("status");
 
-		
+
 		String filePath=this.getServletContext().getRealPath(request.getRequestURI().substring(request.getContextPath().length()));
 		String dirpath= new File(filePath).getParent()+"/files/all.csv";
 		response.setContentType("text/html;charset=UTF-8");
@@ -172,18 +172,35 @@ public class provinceDataServlet extends HttpServlet {
 		//annotation end
 
 		//newly added
+		File file = new File(new File(filePath).getParent()+"/files/url.txt");//定义一个file对象，用来初始化FileReader
+		FileReader reader = new FileReader(file);//定义一个fileReader对象，用来初始化BufferedReader
+		BufferedReader bReader = new BufferedReader(reader);//new一个BufferedReader对象，将文件内容读取到缓存
+		StringBuilder sb = new StringBuilder();//定义一个字符串缓存，将字符串存放缓存中
+		String s = "";
+		while ((s =bReader.readLine()) != null) {//逐行读取文件内容，不读取换行符和末尾的空格
+			sb.append(s);//将读取的字符串添加换行符后累加存放在缓存中
+		}
+		bReader.close();
+		String read_url = sb.toString();
+//		System.out.println(read_url);
+
 		String temp,jsonString;
 		HttpUtil httpUtil=new HttpUtil();
 //		temp=httpUtil.doGet("http://139.199.32.80:3000/getResult?serviceRequestID=59");
-		temp=httpUtil.doGet("http://192.168.3.16:3000/getResult?serviceRequestID=57");
+		temp=httpUtil.doGet(read_url);
 
+//		temp=httpUtil.doGet("http://192.168.3.16:3000/getResult?serviceRequestID=90");
+
+
+//		temp="[{\"time\": \"2018-09-19T07:41:26.000Z\",\"result\": \"[]\"}, {\"time\": \"2018-09-19T07:41:27.000Z\",\"result\": \"[]\"}]";
 
 		jsonString=resolveJson(temp);
 		pw.write(jsonString);
+//		pw.write("[{\"name\":\"朝阳区\",\"value\":5}, {\"name\":\"昌平区\",\"value\":2}]");
 		//add end
 
 		pw.flush();
-		pw.close();		
+		pw.close();
 	}
 
 	public String resolveJson(String str){
